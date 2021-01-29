@@ -3,6 +3,12 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.google.gms.google-services'  // Google Services plugin
+
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "30.0.0"
