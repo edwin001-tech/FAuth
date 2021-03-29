@@ -20,7 +20,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
     private Button login;
@@ -75,12 +80,34 @@ public class MainActivity extends AppCompatActivity {
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
+                            FirebaseUser user = firebaseAuth.getCurrentUser();
+                            assert user != null;
+                            final String currentUserId = user.getUid();
+
+                            collectionReference
+                                    .whereEqualTo("userId", currentUserId)
+                                    .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                                            if (e != null) {
+                                            }
+                                            assert queryDocumentSnapshots != null;
+                                            if (!queryDocumentSnapshots.isEmpty()){
+                                                progressBar.setVisibility(View.INVISIBLE);
+                                                //Go to ListActivity
+                                                startActivity(new Intent(MainActivity.this,
+                                                        PostAccountActivity.class));
+                                            }
+                                        }
+                                    });
+
 
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+                            progressBar.setVisibility(View.INVISIBLE);
 
                         }
                     });
