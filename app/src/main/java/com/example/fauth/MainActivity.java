@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionReference = db.collection("Users");
+    private final CollectionReference collectionReference = db.collection("Users");
 
 
     @Override

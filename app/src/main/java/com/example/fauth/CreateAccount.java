@@ -41,7 +41,7 @@ public class CreateAccount extends AppCompatActivity {
 
     //Firestore connection
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionReference = db.collection("Users");
+    private final CollectionReference collectionReference = db.collection("Users");
 
 
     @Override
