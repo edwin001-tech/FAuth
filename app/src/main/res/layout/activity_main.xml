@@ -25,6 +25,7 @@
 
     <EditText
         android:id="@+id/login_email"
+        style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -32,14 +33,18 @@
         android:layout_marginEnd="15dp"
         android:hint="Email"
         android:ems="10"
+
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <EditText
         android:id="@+id/login_password"
+        style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -47,6 +52,7 @@
         android:layout_marginEnd="15dp"
         android:hint="Password"
         android:ems="10"
+
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +60,7 @@
 
     <Button
         android:id="@+id/login_in_button"
+        style="@style/TextAppearance.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="150dp"
@@ -69,6 +76,7 @@
 
     <TextView
         android:id="@+id/Or"
+        style="@style/TextAppearance.MaterialComponents.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="169dp"
@@ -82,6 +90,7 @@
 
     <Button
         android:id="@+id/create_account_button_login"
+        style="@style/TextAppearance.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
