@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,9 +32,9 @@ import java.util.Objects;
 
 public class CreateAccount extends AppCompatActivity {
     private ProgressBar progressBar;
-    private EditText email;
-    private EditText password;
-    private EditText username;
+    private TextInputEditText email;
+    private TextInputEditText password;
+    private TextInputEditText username;
     private Button createAccount;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -54,11 +55,11 @@ public class CreateAccount extends AppCompatActivity {
 
 
 
-        progressBar = findViewById(R.id.progressBar);
-        email = findViewById(R.id.create_account_email);
-        username = findViewById(R.id.create_account_username);
-        password = findViewById(R.id.create_account_password);
-        createAccount = findViewById(R.id.create_account_button);
+        progressBar = findViewById(R.id.progressbar);
+        email = findViewById(R.id.emailCreateAccount);
+        username = findViewById(R.id.username);
+        password = findViewById(R.id.passwordCreateAccount);
+        createAccount = findViewById(R.id.buttonCreateAccount);
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override

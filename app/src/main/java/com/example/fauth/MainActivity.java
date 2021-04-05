@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,8 +31,8 @@ import javax.annotation.Nullable;
 public class MainActivity extends AppCompatActivity {
     private Button login;
     private Button createAccount;
-    private EditText email;
-    private EditText password;
+    private TextInputEditText email;
+    private TextInputEditText password;
     private ProgressBar progressBar;
 
     private FirebaseAuth firebaseAuth;
@@ -49,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
 
-        login = findViewById(R.id.login_in_button);
-        createAccount = findViewById(R.id.create_account_button_login);
-        email = findViewById(R.id.login_email);
-        password = findViewById(R.id.login_password);
-        progressBar = findViewById(R.id.progressBar);
+        login = findViewById(R.id.login);
+        createAccount = findViewById(R.id.createAccount);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        progressBar = findViewById(R.id.progressbar);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
