@@ -36,6 +36,7 @@ public class CreateAccount extends AppCompatActivity {
     private TextInputEditText password;
     private TextInputEditText username;
     private Button createAccount;
+    private TextView haveAccount;
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
     private FirebaseUser currentUser;
@@ -60,6 +61,15 @@ public class CreateAccount extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.passwordCreateAccount);
         createAccount = findViewById(R.id.buttonCreateAccount);
+        haveAccount = findViewById(R.id.haveAccount);
+
+        haveAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CreateAccount.this, MainActivity.class));
+                finish();
+            }
+        });
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
