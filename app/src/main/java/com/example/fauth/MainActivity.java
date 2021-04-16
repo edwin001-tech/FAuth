@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 Toast.makeText(MainActivity.this, "Error ! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
+
                             }
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             if (user != null) {
@@ -140,6 +141,8 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 notifyUser(e.getLocalizedMessage());
                             }
+                            startActivity(new Intent(MainActivity.this,
+                                    PostAccountActivity.class));
 
                         }
                     });
