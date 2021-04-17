@@ -25,6 +25,9 @@ public class PostAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_account);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
+
         currentUserTextView = findViewById(R.id.currentUsername);
 
         if (userAPI.getInstance() != null) {
@@ -53,7 +56,6 @@ public class PostAccountActivity extends AppCompatActivity {
                 //signout the current user
                 if (user != null && firebaseAuth != null) {
                     firebaseAuth.signOut();
-
                     startActivity(new Intent(PostAccountActivity.this,
                             MainActivity.class));
                     //finish();
