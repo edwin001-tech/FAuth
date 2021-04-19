@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(MainActivity.this, "Logged in Successfully", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(MainActivity.this,
+                                        PostAccountActivity.class));
 
                             } else {
                                 Toast.makeText(MainActivity.this, "Error ! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
@@ -116,8 +118,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                                                         //Go to ListActivity
-                                                        startActivity(new Intent(MainActivity.this,
-                                                                PostAccountActivity.class));
+//                                                        startActivity(new Intent(MainActivity.this,
+//                                                                PostAccountActivity.class));
                                                     }
                                                 }
                                             }
@@ -142,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                                 notifyUser(e.getLocalizedMessage());
                             }
                             startActivity(new Intent(MainActivity.this,
-                                    PostAccountActivity.class));
+                                    MainActivity.class));
 
                         }
                     });
