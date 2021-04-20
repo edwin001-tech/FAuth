@@ -151,7 +151,7 @@ public class CreateAccount extends AppCompatActivity {
 
 
                                                                     Intent intent = new Intent(CreateAccount.this,
-                                                                            PostAccountActivity.class);
+                                                                            MainActivity.class);
                                                                     intent.putExtra("username", name);
                                                                     intent.putExtra("userId", currentUserId);
                                                                     startActivity(intent);
