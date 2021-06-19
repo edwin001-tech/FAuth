@@ -52,6 +52,7 @@ public class PostAccountActivity extends AppCompatActivity {
                 //show user location
 
 
+
         break;
             case R.id.signout:
                 //signout the current user

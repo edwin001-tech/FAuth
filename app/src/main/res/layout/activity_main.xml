@@ -62,6 +62,7 @@
     <Button
         android:id="@+id/login"
         style="?attr/materialButtonOutlinedStyle"
+        android:fontFamily="sans-serif-condensed-light"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="136dp"
@@ -82,10 +83,12 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="136dp"
         android:text="or"
+        android:fontFamily="sans-serif-condensed-light"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
+
 
     <Button
         android:id="@+id/createAccount"
@@ -96,6 +99,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="136dp"
+        android:fontFamily="sans-serif-condensed-light"
         android:text="CREATE ACCOUNT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
