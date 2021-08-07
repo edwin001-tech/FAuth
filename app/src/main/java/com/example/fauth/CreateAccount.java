@@ -155,6 +155,7 @@ public class CreateAccount extends AppCompatActivity {
                                                                     intent.putExtra("username", name);
                                                                     intent.putExtra("userId", currentUserId);
                                                                     startActivity(intent);
+                                                                    overridePendingTransition(R.anim.slide_in, R.anim.slide_out, R.anim.slide_back_in, R.anim.slide_back_out);
 
                                                                 } else {
                                                                     progressBar.setVisibility(View.INVISIBLE);
@@ -190,6 +191,9 @@ public class CreateAccount extends AppCompatActivity {
             }
 
         }
+
+    private void overridePendingTransition(int slide_in, int slide_out, int slide_back_in, int slide_back_out) {
+    }
 
     //check if user is currently signed in
     @Override

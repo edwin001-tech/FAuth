@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                 loginEmailPasswordUser(email.getText().toString().trim(),
                         password.getText().toString().trim());
 
+
+
             }
         });
 
@@ -77,7 +79,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, CreateAccount.class));
+                overridePendingTransition(R.anim.slide_in, R.anim.slide_out, R.anim.slide_back_in, R.anim.slide_back_out);
 
+
+            }
+
+            private void overridePendingTransition(int slide_in, int slide_out, int slide_back_in, int slide_back_out) {
             }
         });
     }
@@ -146,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                             startActivity(new Intent(MainActivity.this,
                                     MainActivity.class));
+                            overridePendingTransition(R.anim.slide_in, R.anim.slide_out, R.anim.slide_back_in, R.anim.slide_back_out);
 
                         }
                     });
@@ -158,6 +166,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG)
                     .show();
         }
+    }
+
+    private void overridePendingTransition(int slide_in, int slide_out, int slide_back_in, int slide_back_out) {
     }
 
     private void notifyUser(String localizedMessage) {
